@@ -29,7 +29,7 @@ if echo "$FLIST" | grep -i ".jpeg\|.png\|.jpg" &>/dev/null; then
 		exit
 	fi
 	
-    cp "$ART" /tmp/album;
+    ln -s "$ART" /tmp/album;
 
     ps -e | grep 'feh' > /dev/null;
     if [[ "$?" -eq "1" ]]; then
