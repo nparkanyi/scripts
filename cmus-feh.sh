@@ -34,6 +34,6 @@ if echo "$FLIST" | grep -i ".jpeg\|.png\|.jpg" &>/dev/null; then
         setsid feh -g 700x700+1160+200 -x -Z -R 1 -B black --scale-down /tmp/album &
     fi
 else
-	killall -q feh
+#	killall -q feh
 	exit
 fi
