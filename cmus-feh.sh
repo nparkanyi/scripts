@@ -34,7 +34,11 @@ else
     # fallback: attempt to extract embedded album art
     ffmpeg -i "$FILE" "$FOLDER"/cover.jpg
     ART="$FOLDER"/cover.jpg
-    cp "$ART" /tmp/album
+    if [ -x "$ART" ]; then
+        cp "$ART" /tmp/album
+    else
+        cp ~/scripts/noalbum.png /tmp/album
+    fi
 fi
 
 ps -e | grep 'feh' > /dev/null;
